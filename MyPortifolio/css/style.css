@@ -1,0 +1,259 @@
+/* General styles for responsiveness */
+body {
+    background-image: url('..//images/background6.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    height: 100vh; /* Ensure full height */
+    overflow: hidden; /* Prevent overflow for smaller screens */
+}
+
+/* Fixed header */
+header {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: left;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Style the navigation bar */
+#nav_bar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Navigation links */
+header a {
+    color: aliceblue;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header a:hover {
+    color: orangered; /* Change to a glowing red on hover */
+    transform: scale(1.1); /* Slight scale effect */
+}
+
+/* Hamburger menu (only visible on small screens) */
+#hamburger {
+    display: none;
+    cursor: pointer;
+    color: aliceblue;
+    font-size: 30px;
+    padding: 10px;
+}
+
+#hamburger:hover {
+    color: orangered;
+    transform: scale(1.1);
+}
+
+/* Hide hamburger icon when menu is active */
+#hamburger.hidden {
+    display: none;
+}
+
+/* Keyframe animation for sliding in the dropdown menu */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+main {
+    padding-top: 60px; /* Ensure main content is below fixed header */
+    overflow-y: auto; /* Enable scrolling for smaller screens */
+    height: calc(100vh - 60px); /* Adjust height considering the header */
+}
+
+/* Styling for madalitso, tembo, and web developer */
+.madalitso {
+    font-size: 6rem;
+    color: aliceblue;
+    display: block;
+    font-weight: 1000;
+    animation: slideInLeft 2s forwards 0.2s;
+}
+
+.tembo {
+    font-size: 4rem;
+    color: aliceblue;
+    display: block;
+    font-weight: 650;
+    animation: slideInRight 2s forwards 0.2s;
+}
+
+.web-developer {
+    font-size: 3rem;
+    color: orangered;
+    display: block;
+    font-style: oblique;
+    font-weight: 320;
+    animation: slideInBottom 2s forwards 0.2s;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    } to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    } to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    } to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h1 {
+    line-height: 1.2;
+    margin: 8px;
+}
+
+/* Styling for buttons */
+.custom-btn {
+    background-color: transparent;
+    border: 2px solid aliceblue;
+    color: aliceblue;
+    padding: 10px 20px;
+    margin-right: 40px;
+    margin-top: 8px;
+    font-size: 1rem;
+    border-radius: 28px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-btn:hover {
+    background-color: aliceblue;
+    color: #333333;
+    transform: scale(1.3);
+}
+
+.custom-btn:focus {
+    outline: none;
+}
+
+#home_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Footer styling */
+footer {
+    position: relative;
+    padding: 20px 0;
+    text-align: center;
+    color: aliceblue;
+}
+
+#socials {
+    display: flex;
+    justify-content: left;
+    padding: 20px;
+}
+
+/* Social media icons with hover effects */
+#socials a {
+    color: aliceblue;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#socials a:hover {
+    color: orangered; /* Glowing effect */
+    transform: scale(1.2); /* Slightly grow on hover */
+}
+
+/* Social media icon sizes */
+.fa-square-facebook,
+.fa-square-github,
+.fa-linkedin {
+    font-size: 60px;
+}
+
+
+/* Show the hamburger icon on smaller screens */
+@media (max-width: 768px) {
+    body {
+        max-width: 100%;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    #hamburger {
+        display: block;
+    }
+
+    /* Hide the navigation links by default on smaller screens */
+    #nav_bar a {
+        display: none;
+    }
+
+    /* When the active class is added, display the links as a dropdown */
+    #nav_bar.active a {
+        display: block; /* Changed to block for vertical stacking */
+        width: 100%;
+        text-align: left;
+        padding: 10px 20px;
+        background-color: #333;
+        animation: slideIn 0.3s ease-in-out;
+    }
+
+    /* Add background to nav items when expanded */
+    #nav_bar.active {
+        display: flex;
+        flex-direction: column; /* Vertical stacking */
+        width: 100%;
+    }
+
+    /* Adjust main content height */
+    #home_main {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+}

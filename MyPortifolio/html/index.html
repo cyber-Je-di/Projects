@@ -25,18 +25,51 @@
             </div>
         </div>
     </div>
-
+<!--About-->
     <div id="about">
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
                     <img src="../images/cloud2.jpeg" alt="">
                 </div>
-                <div class="about-col-1">
-                    <h1>About Me</h1>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        Some description of a paragraph of me, which currently doesnt not conatain much info, but is being used as a reference just to see how the actaul paragraph will look like, otherwise just ignore this text as it is a waste of time, go on with you, I had little to do as I was writing this code but thanks for making it this far. Good luck on all your future endeavors. Thank you. 
+                        This paragraph turns out to be really short, so I have to add a little more information, but i have none to add, I'll just keep it random, only until i feel is now long enough. Which I think it is now
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-content active-tab" id="skills"> 
+                        <ul>
+                            <li><span>UI?UX</span><br>Designing Web/App interfaces</li>
+                            <li><span>Web Development</span><br>Web app interfaces</li>
+                            <li><span>App Development</span><br>Building Android/iOS apps</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="experience">
+                        <ul>
+                            <li><span>2024-Current</span><br>ICTAZ-MU Chapter President</li>
+                            <li><span>2022-2023</span><br>Some Projects at some organization</li>
+                            <li><span>2021-2022</span><br>Some other project</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="education">
+                        <ul>
+                            <li><span>2021-Current</span><br>Computer Science Student Mulungushi University</li>
+                            <li><span>2015-2019</span><br>Secondary School-Nakambala Private School</li>
+                            <li><span>2008-2014</span><br>Primary School-Nakambala Private School</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="../js/script.js"></script>
 </body>
 </html> 
